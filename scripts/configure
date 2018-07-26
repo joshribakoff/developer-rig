@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Check the platform.	
+if [ "$(uname)" != "Darwin" && "$(uname)" != "Linux"]; then	
+	echo "This script is for Mac and Linux only."	
+	exit 1	
+fi
+
 # Run the installation script first.
 if [ "$(uname)" == "Darwin" ]; then
 	$(dirname $0)/install || exit 1

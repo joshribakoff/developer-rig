@@ -1,5 +1,12 @@
 #!/bin/bash
 
+
+# Check the platform.	
+if [ "$(uname)" != "Darwin" && "$(uname)" != "Linux"]; then	
+	echo "This script is for Mac and Linux only."	
+	exit 1	
+fi
+
 # Create utility functions.
 getfullpath() {
 	python -c 'import os,sys;print(os.path.realpath(sys.argv[1]))' "$1"
