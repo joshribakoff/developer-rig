@@ -2,9 +2,9 @@
 
 
 # Check the platform.	
-if [ "$(uname)" != "Darwin" && "$(uname)" != "Linux"]; then	
-	echo "This script is for Mac and Linux only."	
-	exit 1	
+if [ "$(uname)" != "Darwin" && "$(uname)" != "Linux"]; then
+	echo "This script is for Mac and Linux only."
+	exit 1
 fi
 
 # Create utility functions.
