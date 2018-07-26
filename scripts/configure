@@ -1,13 +1,9 @@
 #!/bin/bash
 
-# Check the platform.
-if [ "$(uname)" != "Darwin" ]; then
-	echo "This script is for Mac only."
-	exit 1
-fi
-
 # Run the installation script first.
-$(dirname $0)/install || exit 1
+if [ "$(uname)" == "Darwin" ]; then
+	$(dirname $0)/install || exit 1
+fi
 
 # Create utility functions.
 fail() {
@@ -54,4 +50,7 @@ grep -Fq localhost.rig.twitch.tv /etc/hosts || echo '127.0.0.1 localhost.rig.twi
 cannot 'update /etc/hosts.  Please add "127.0.0.1 localhost.rig.twitch.tv" to /etc/hosts manually before running this script again'
 
 # Create CA and rig and localhost SSL certificates.
-./scripts/make-cert
+# This script is for Mac only.
+if [ "$(uname)" == "Darwin" ]; then
+	./scripts/make-cert
+fi

@@ -8,7 +8,7 @@ Take these steps to get Hello World running in Local Mode in the Rig.
 
 1.  If you already have [Git](https://git-scm.com/download) installed, clone the rig.  Otherwise, [download and extract the Zip file](https://github.com/twitchdev/developer-rig/archive/master.zip).
 2.  Open the `scripts` folder in the `developer-rig` folder.
-3.  Double-click the `run` file on Mac, `run.cmd` file on Windows.  The first time you run the script it will take a while since it will install and configure all of the dependencies.
+3.  Double-click the `run` file on Mac, `run.cmd` file on Windows.  The first time you run the script it will take a while since it will install and configure all of the dependencies. You can also execute `sh scripts/run` on linux, installing git and the root CA will be skipped on linux.
 
 When you are done using the Developer Rig, you may either close all opened terminal windows or press `Ctrl-C` in all of them.
 
